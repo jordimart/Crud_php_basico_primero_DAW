@@ -17,13 +17,17 @@
 		});
 	});
 	</script>
-	<script language="JavaScript"> 
+	<script type="text/javascript"> 
 	function pregunta(){ 
-	    if (confirm('¿Estas seguro de borrar el usuario seleccionado?')){
+		
+	    if (!(confirm('¿Estas seguro de borrar el usuario seleccionado?'))){
 	    	
-	        window.location.href="index.php?page=controller_users2.php&op=delete";
+	    	return false;
 	       
-	    } 
+	       
+	    } else{
+	    window.location.href="index.php?page=controller_users2.php&op=delete";
+	    }
 	} 
 	</script> 
 	

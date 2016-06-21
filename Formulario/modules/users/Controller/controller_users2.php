@@ -361,8 +361,6 @@ if ($_GET['page'] === "controller_users2.php") {
         case 'delete':
 
             try {
-
-           
                 $daouser = new DAO_user();
                 $res = $daouser->delete_user($_GET['dni']);
                 
