@@ -11,15 +11,13 @@
     
             <div id="main-content">
     
-    <?php
+            <?php
+            
+            include("Views/inc/page.php");
+            ?>    
     
-    include("Views/inc/page.php");
-    ?>    
-    
-                <br/>
             </div>
-    
-    <?php include("Views/inc/footer.php"); ?> 
-    
         </body>
+        
+         <?php include("Views/inc/footer.php"); ?> 
     </html>

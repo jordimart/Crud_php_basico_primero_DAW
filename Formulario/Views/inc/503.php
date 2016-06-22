@@ -1,5 +1,4 @@
-
-		<meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; />
+<meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; />
 	
         <style>
             ::-moz-selection {background: #b3d4fc; text-shadow: none;}
@@ -15,7 +14,6 @@
     
             <br><br><br>
             
-            <h2><span>404</span>Page not found</h2>
+            <h2><span>503</span>Server error</h2>
             <p>¡Vaya! Algo salió mal.<br /><br />Trata de volver a cargar esta página o no dudes en contactar con nosotros si el problema persiste.</p>
         
-    

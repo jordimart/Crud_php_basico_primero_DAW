@@ -16,7 +16,6 @@
 			return $conexion;
 		}
 		
-		
 		public static function close($conexion){
 			mysqli_close($conexion);
 		}

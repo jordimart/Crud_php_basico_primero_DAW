@@ -1,11 +1,14 @@
 <?php
 
-session_start();
+                include("modules/users/views/header_user.php");
+                include("utils/functions.inc.php");
+                include("modules/users/model/validate_users.php");
+                include("modules/users/model/DAO_user.php");
+                session_start();
 
 if ($_GET['page'] === "controller_users2.php") {
     
    
-
     switch ($_GET['op']) {
 
         case 'create':
@@ -157,13 +160,14 @@ if ($_GET['page'] === "controller_users2.php") {
                         $daouser = new DAO_user();
                         $res = $daouser->nuevo_user($user);
                     } catch (Exception $e) {
-                        echo('<script>alert("503 internal server error<br>Error al crear un usuario");</script>');
-                        die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                        
+                        die('<script>window.location.href="index.php?page=503";</script>');
                     }
                     if ($res) {
                         
                     } else {
-                        echo('<script>alert("503 internal server error<br>Error al crear un usuario");</script>');
+                        
+                        die('<script>window.location.href="index.php?page=503";</script>');
                     }
                     die('<script>top.location.href="index.php?page=controller_users2.php&op=list";</script>');
                 }
@@ -323,8 +327,7 @@ if ($_GET['page'] === "controller_users2.php") {
                         
                     } catch (Exception $e) {
                 
-                echo('<script>alert("503 internal server error Error al modificar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                     die('<script>window.location.href="index.php?page=503";</script>');
                     }
         
                     if ($resm) {
@@ -332,8 +335,7 @@ if ($_GET['page'] === "controller_users2.php") {
                         die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
                     } else {
         
-                        echo('<script>alert("error alintroducir datos, el dni esta repetido");</script>');
-                        die('<script>top.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                        die('<script>window.location.href="index.php?page=503";</script>');
                     }
                 }
             }
@@ -342,14 +344,14 @@ if ($_GET['page'] === "controller_users2.php") {
                 $daouser = new DAO_user();
                 $res = $daouser->show_user($_GET['dni']);
             } catch (Exception $e) {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
             if ($res) {
                 
             } else {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
 
             
@@ -366,8 +368,7 @@ if ($_GET['page'] === "controller_users2.php") {
                 
             } catch (Exception $e) {
                 
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
 
             if (!$res) {
@@ -375,8 +376,7 @@ if ($_GET['page'] === "controller_users2.php") {
                 die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
             } else {
 
-                echo('<script>alert("Error al borrar el usuario");</script>');
-                die('<script>top.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
 
             break;
@@ -388,13 +388,14 @@ if ($_GET['page'] === "controller_users2.php") {
                 $daouser = new DAO_user();
                 $res = $daouser->show_user($_GET['dni']);
             } catch (Exception $e) {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
             if ($res) {
                 
             } else {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
 
             include ('modules/users/views/show_user_view.php');
@@ -408,23 +409,21 @@ if ($_GET['page'] === "controller_users2.php") {
                 $object = new DAO_user();
                 $res = $object->list_users();
             } catch (Exception $e) {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
             if ($res) {
                 
             } else {
-                echo('<script>alert("503 internal server error<br>Error al consultar el usuario");</script>');
+                
+                die('<script>window.location.href="index.php?page=503";</script>');
             }
-
 
             include("modules/users/views/list_users_view.php");
 
             break;
             
             default:
-                
-                
                 
                 include("Views/inc/404_2.php");
                 
