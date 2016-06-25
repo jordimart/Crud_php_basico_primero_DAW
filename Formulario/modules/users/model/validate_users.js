@@ -62,6 +62,15 @@
     return false;
 }
 
+function validate_publi(options) {
+    
+    if(options[0].checked==false && options[1].checked==false && options[2].checked==false && options[3].checked==false) {
+            //alert('Please check at least one of the options.');
+            return true;
+        
+    }
+    return false;
+}
 
 
 /**
@@ -82,8 +91,8 @@ function validate_user() {
     	var age = document.getElementById('age').value;
     	var nationality = document.getElementById('nationality').value;
     	
+    	
     	 var v_dni = validate_dni(dni);//le pasamos la funcion para validar dni js
-    	 //
          var v_name = validate_word(name);//le pasamos la funcion para validar word js
          var v_last_name = validate_word(last_name);//le pasamos la funcion para validar word js
          var v_date_birth = validate_date_birth(date_birth);
@@ -92,7 +101,8 @@ function validate_user() {
          var v_email = validate_email(email);
          var v_age = validate_age(age);
          var v_nationality = validate_word(nationality);
-        
+       
+    	
     	
     	if (!v_dni) {//si es diferente a true pinta error
             document.getElementById('e_dni').innerHTML = "El dni introducido no es valido";

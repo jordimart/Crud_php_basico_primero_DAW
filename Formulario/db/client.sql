@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `nationality` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `sexo` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `aficion` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  `publi` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`dni`),
   UNIQUE KEY `dni` (`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -46,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- Volcado de datos para la tabla `client`
 --
 
-INSERT INTO `client` (`dni`, `name`, `last_name`, `date_birth`, `country`, `address`, `email`, `age`, `nationality`, `sexo`, `aficion`) VALUES
-('48293556l', 'jorge', 'martinez', '14/06/2016', 'Ontinyent', 'callemayor', 'jorge@gmail.com', 32, 'espana', 'masculino', 'deportes');
+INSERT INTO `client` (`dni`, `name`, `last_name`, `date_birth`, `country`, `address`, `email`, `age`, `nationality`, `sexo`, `aficion`,`publi`) VALUES
+('48293556l', 'jorge', 'martinez', '14/06/2016', 'Ontinyent', 'callemayor', 'jorge@gmail.com', 32, 'espana', 'masculino', 'deportes','deporte');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

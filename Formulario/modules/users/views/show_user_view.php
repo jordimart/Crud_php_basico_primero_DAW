@@ -13,6 +13,7 @@
     <tr><td><b> Nationality:</b></td><td><?php echo $res['nationality']; ?></td></tr>
     <tr><td><b> Sexo:</b></td><td><?php echo $res['sexo']; ?></td></tr>
     <tr><td><b> Hobby:</b></td><td><?php echo $res['aficion']; ?></td></tr>
+    <tr><td><b> Publicidad:</b></td><td><?php echo $res['publi']; ?></td></tr>
 
 </table>
 
@@ -20,5 +21,5 @@
 <br><br><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="index.php?page=controller_users2.php" class="myButton">Back</a>
+<a href="index.php?page=controller_users2.php&op=list" class="myButton">Back</a>
 <br><br>

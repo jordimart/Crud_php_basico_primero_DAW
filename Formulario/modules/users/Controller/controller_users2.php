@@ -35,6 +35,7 @@ if ($_GET['page'] === "controller_users2.php") {
                 $error_age = false;
                 $error_nationality_empty = false;
                 $error_nationality = false;
+                
 
 
                 $error_dni_empty = string_empty($_POST['dni']);
@@ -425,7 +426,7 @@ if ($_GET['page'] === "controller_users2.php") {
             
             default:
                 
-                include("Views/inc/404_2.php");
+                include("Views/inc/404.php");
                 
             break;
             

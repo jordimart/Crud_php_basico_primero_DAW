@@ -33,3 +33,5 @@
 	    $reg = "/^\d{1,2}$/i";
 	    return preg_match($reg, $text);
 	}
+	
+	

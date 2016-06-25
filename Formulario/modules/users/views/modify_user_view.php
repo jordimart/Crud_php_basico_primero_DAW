@@ -105,13 +105,77 @@
 
                     </select></p>
                 </td><td></td><td></td></tr>
+                
+                <tr>
+                    <td><b>Publicidad: (debes elegir al menos 2)</b></td>
+                <?php
+                    $publi=explode(":", $res['publi']);
+                ?>
+                <td>
+                    <?php
+                        $busca_array=in_array("Deportes", $publi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Deportes" checked/>Deportes
+                    <?php
+                        }else{
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Deportes"/>Deportes
+                    <?php
+                        }
+                    ?>
+                    <?php
+                        $busca_array=in_array("Libros", $publi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Libros" checked/>Libros
+                    <?php
+                        }else{
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Libros"/>Libros
+                    <?php
+                        }
+                    ?>
+                    <?php
+                        $busca_array=in_array("Electronica", $publi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Electronica" checked/>Electronica
+                    <?php
+                        }else{
+                    ?>
+                    <input type="checkbox" id= "publi[]" name="publi[]" value="Electronica"/>Electronica
+                    <?php
+                        }
+                    ?>
+                    
+                    <?php
+                        $busca_array=in_array("Ropa", $publi);
+                        if($busca_array){
+                    ?>
+                        <input type="checkbox" id= "publi[]" name="publi[]" value="Ropa" checked/>Ropa</td>
+                    <?php
+                        }else{
+                    ?>
+                    <input type="checkbox" id= "publi[]" name="publi[]" value="Ropa"/>Ropa</td>
+                    <?php
+                        }
+                    ?>
+                </td>
+                
+                    
+                 <td></td>   
+                <td>
+                    
+                </td>
+            </tr>
         </table>
 
         <div id="table-button">
         <table>
             <tr>
         <td><input type="submit" class="create" name="validar" id="validar" value="Validar" /></td>
-        <td><a class="myButton" href="index.php?page=controller_users2.php">Back</a><td>
+        <td><a class="myButton" href="index.php?page=controller_users2.php&op=list">Back</a><td>
            </tr>
         </table>
         </div>

@@ -1,6 +1,6 @@
 
 <form  method="post" name="formulario" id="formulario" onsubmit="return validate_user();" action="index.php?page=controller_users2.php&op=create" > 
-
+<!--<form  method="post" name="formulario" id="formulario"  action="index.php?page=controller_users2.php&op=create" > -->
     <left>
 
         <br>
@@ -97,7 +97,8 @@
                     <input type="radio"  name="sexo" id="sexo" value="otros" >otros
                 </td><td></td><td></td></tr>
 
-            <tr><td><label><b>Elige aficion: </b></td><td></label>
+            <tr><td><b>Elige aficion: </b></td>
+            <td>
                     <select name="aficion" id="aficion">
                         <option selected>deportes
                         <option>musical
@@ -106,14 +107,30 @@
                         <option>informatica
 
                     </select></p>
+                    
+            
                 </td><td></td><td></td></tr>
+                
+                <tr>
+                <td><b>Publicidad: (debes elegir al menos 2)</b></td>
+                <td><input type="checkbox" id= "publi[]" name="publi[]"  value="Deportes"/>deportes
+                    <input type="checkbox" id= "publi[]" name="publi[]"  value="Libros"/>libros
+                    <input type="checkbox" id= "publi[]" name="publi[]"  value="Electronica"/>electronica
+                    <input type="checkbox" id= "publi[]" name="publi[]"  value="Ropa"/>ropa
+                    </td>
+                    
+                 <td></td>   
+                <td>
+                    
+                </td>
+            </tr>
         </table>
         
         <div id="table-button">
         <table>
             <tr>
         <td><input type="submit" class="create" name="validar" id="validar" value="Validar" /></td>
-        <td><a class="myButton" href="index.php?page=controller_users2.php">Back</a><td>
+        <td><a class="myButton" href="index.php?page=controller_users2.php&op=list">Back</a><td>
            </tr>
         </table>
         </div>
