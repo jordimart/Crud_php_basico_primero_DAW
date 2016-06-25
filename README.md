@@ -3,10 +3,32 @@ Ademas se subira a git mediante comandos y se ira actualizando de la misma forma
 En este fichero intentare describir algunos pasos, por ejemplo ya hemos añadido este archivo Readme, 
 el fichero gitignore y un manual aun no terminado en formato odt.
 ********************
-21_6_2016
-Rectifico un fallo en el delete, mi delete estaba hecho con un javascript sin vista, cuando pulsabamos cancelar en la
- ventana de confirmacion borraba igualmente alusuario,ahora se queda en el listar.
-22_6_2016
-Rectifico el Page, ahora es mas sencillo pero tengo dudas en la parte default, 
-conforme esta siempre que este la url mal entrara al 404, tengo que consyltarlo.
-Se ha añadido la vista 503 y los fallos ya no dan un alert, aparece el error en pantalla.
+Ací teniu les millores que vos comentava anteriorment al projecte d'Àngel. Reviseu-les al codi.
+
+- createuser view -> pintar totes les dades al form quan ja s'ha enviat, per a que l'us no les torne a introduir si comet un error: 
+value="<?php echo !empty($_POST['dni'])?$_POST['dni']:'';?>"
+Esta millora no està, l'afegeix jo.
+
+- updateuser view -> pintar totes les dades al form per a que l'us no les torne a introduir si comet un error: 
+value="<?php echo !empty($user['dni'])?$user['dni']:'';?>"
+
+- deleteuser view -> action="index.php?page=controller_user&op=delete&id=<?php echo $_GET['id']; ?>">
+
+- updateuser view -> control dels radiobutton, checkbox, select
+- Funcion validate -> validar en php en una única funció
+
+- En controller_users:
+	default:
+            include("view/inc/error404.php");
+            break;
+
+- En pages:
+	case "404";
+			include("view/inc/error".$_GET['page'].".php");
+			break;
+		case "503";
+			include("view/inc/error".$_GET['page'].".php");
+			break;
+		default;
+			include("module/inicio/view/inicio.php");
+			break;
