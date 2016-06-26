@@ -1,6 +1,6 @@
 
-<form  method="post" name="formulario" id="formulario" onsubmit="return validate_user();" action="index.php?page=controller_users2.php&op=create" > 
-<!--<form  method="post" name="formulario" id="formulario"  action="index.php?page=controller_users2.php&op=create" > -->
+<!-- <form  method="post" name="formulario" id="formulario" onsubmit="return validate_user();" action="index.php?page=controller_users2.php&op=create" > -->
+<form  autocomplete="on" method="post" name="formulario" id="formulario"  action="index.php?page=controller_users2.php&op=create" > 
     <left>
 
         <br>
@@ -9,84 +9,75 @@
 
         <table >
 
-            <tr><td><b> Dni:</b></td> <td><input type="text" align="LEFT" name="dni" id="dni" placeholder="dni" value=""/></td>
+            <tr><td><b> Dni:</b></td> <td><input type="text" align="LEFT" name="dni" id="dni" placeholder="dni" value="<?php echo !empty($_POST['dni'])?$_POST['dni']:'';?>"/></td>
                 <td><span id="e_dni" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_dni != "")
-                        print ("<SPAN CLASS='styerror' ;>" . $error_dni . "</SPAN>");
-                    ?>
+                        print ("<SPAN CLASS='styerror' ;>" . $_POST['e_dni']. "</SPAN>");
+                        ?>
                     </td>
 
             </tr>
-            <tr><td><b> Nombre:</b></td> <td><input type="text" align="LEFT" name="name" id="name" placeholder="name" value=""/></td>
+            <tr><td><b> Nombre:</b></td> <td><input type="text" align="LEFT" name="name" id="name" placeholder="name" value="<?php echo !empty($_POST['name'])?$_POST['name']:'';?>"/></td>
                 <td><span id="e_name" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_name != "")
-                        print ("<SPAN CLASS='styerror' >" . $error_name . "</SPAN>");
+                        print ("<SPAN CLASS='styerror' >" . $_POST['e_name'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Primer apellido:</b></td> <td><input type="text" align="LEFT" name="last_name" id="last_name" placeholder="last_name" value=""/></td>
+            <tr><td> <b>Primer apellido:</b></td> <td><input type="text" align="LEFT" name="last_name" id="last_name" placeholder="last_name" value="<?php echo !empty($_POST['last_name'])?$_POST['last_name']:'';?>"/></td>
                 <td><span id="e_last_name" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_last_name != "")
-                        print ("<SPAN CLASS='styerror';>" . $error_last_name . "</SPAN>");
+                        print ("<SPAN CLASS='styerror';>" . $_POST['e_last_name'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Selecciona fecha:</b></td><td><input id="date_birth" type="text" name="date_birth" placeholder="date_birth" value=""/></td>
+            <tr><td> <b>Selecciona fecha:</b></td><td><input id="date_birth" type="text" name="date_birth" placeholder="date_birth" value="<?php echo !empty($_POST['date_birth'])?$_POST['date_birth']:'';?>"/></td>
                 <td><span id="e_date_birth" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_date_birth != "")
-                        print ("<SPAN CLASS='styerror' ;>" . $error_date_birth . "</SPAN>");
+                        print ("<SPAN CLASS='styerror' ;>" . $_POST['e_date_birth'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Poblacion:</b></td> <td><input type="text" align="LEFT" name="country" id="country" placeholder="country" value=""/></td>
+            <tr><td> <b>Poblacion:</b></td> <td><input type="text" align="LEFT" name="country" id="country" placeholder="country" value="<?php echo !empty($_POST['country'])?$_POST['country']:'';?>"/></td>
                 <td><span id="e_country" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_country != "")
-                        print ("<SPAN CLASS='styerror';>" . $error_country . "</SPAN>");
+                        print ("<SPAN CLASS='styerror';>" . $_POST['e_country'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Direccion:</b></td> <td><input type="text" align="LEFT" name="address" id="address" placeholder="addrress" value=""/></td>
+            <tr><td> <b>Direccion:</b></td> <td><input type="text" align="LEFT" name="address" id="address" placeholder="address" value="<?php echo !empty($_POST['address'])?$_POST['address']:'';?>"/></td>
                 <td><span id="e_address" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_address != "")
-                        print ("<SPAN CLASS='styerror';>" . $error_address . "</SPAN>");
+                        print ("<SPAN CLASS='styerror';>" . $_POST['e_address'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Email:</b></td> <td><input type="text" align="LEFT" name="email" id="email" placeholder="email" value=""/></td>
+            <tr><td> <b>Email:</b></td> <td><input type="text" align="LEFT" name="email" id="email" placeholder="email" value="<?php echo !empty($_POST['email'])?$_POST['email']:'';?>"/></td>
                 <td><span id="e_email" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_email != "")
-                        print ("<SPAN CLASS='styerror' ;>" . $error_email . "</SPAN>");
+                        print ("<SPAN CLASS='styerror' ;>" . $_POST['e_email'] . "</SPAN>");
                     ?></td>
 
             </tr>
-            <tr><td> <b>Edad:</b></td> <td><input type="text" align="LEFT" name="age" id="age" placeholder="age" value=""/></td>
+            <tr><td> <b>Edad:</b></td> <td><input type="text" align="LEFT" name="age" id="age" placeholder="age" value="<?php echo !empty($_POST['age'])?$_POST['age']:'';?>"/></td>
                 <td><span id="e_age" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_age != "")
-                        print ("<SPAN CLASS='styerror' ;>" . $error_age . "</SPAN>");
+                        print ("<SPAN CLASS='styerror' ;>" . $_POST['e_age'] . "</SPAN>");
                     ?></td>
             </tr>
-            <tr><td> <b>Nacionalidad:</b></td> <td><input type="text" align="LEFT" name="nationality" id="nationality" placeholder="nationality" value=""/></td>
+            <tr><td> <b>Nacionalidad:</b></td> <td><input type="text" align="LEFT" name="nationality" id="nationality" placeholder="nationality" value="<?php echo !empty($_POST['nationality'])?$_POST['nationality']:'';?>"/></td>
                 <td><span id="e_nationality" class="styerror"></span></td>
 
                 <td>	<?php
-                    if ($error_nationality != "")
-                        print ("<SPAN CLASS='styerror' ;>" . $error_nationality . "</SPAN>");
+                        print ("<SPAN CLASS='styerror' ;>" . $_POST['e_nationality'] . "</SPAN>");
                     ?></td>
             </tr>
 
