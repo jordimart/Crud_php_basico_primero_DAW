@@ -49,16 +49,16 @@
 	#table-button table{
 			
 	        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-		    font-size: 16px;    margin: 40px;     width: 200px; text-align: left;    border-collapse: collapse;
+		    font-size: 16px;    margin: 40px;     width: 800px; text-align: center;    border-collapse: collapse;
 		    table-layout: auto;
 		    }
 		
-   #table-button th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
+    #table-button th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
 		    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #000;
 		    }
 		
 	#table-button td {    padding: 8px;     background: white;     border-bottom: 1px solid #fff;
-			    color: white;    border-top: 1px solid transparent ; 
+			    color: black;    border-top: 1px solid transparent ; 
 				
 			}
 			

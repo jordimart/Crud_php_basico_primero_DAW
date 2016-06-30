@@ -39,7 +39,7 @@
             echo '<a href="index.php?page=controller_users2.php&op=modify&dni=' . $row['dni'] . '"class="modify">Modify</a></td>';
             echo '&nbsp;';
             echo '<td>';
-            echo '<a  href="index.php?page=controller_users2.php&op=delete&dni=' . $row['dni'] . '"class="delete" onclick="return pregunta()";>Delete</a>';
+            echo '<a  href="index.php?page=controller_users2.php&op=delete&dni=' . $row['dni'] . '"class="delete">Delete</a>';
             echo '</td>';
             echo '</div>';
             echo '</tr>';

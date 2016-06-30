@@ -36,23 +36,15 @@
                 				
                 			  break;
             
+               case '404':
+                 
+                	include("Views/inc/404.php");
+                				
+                			  break;
                 default:
                     
-                    /**Esta opcion es para cuando se entra la primera vez, normalmente
-                     * la opcion sera null entonces entra en homepage
-                     * a partir de ahi si la direccion url tiene algun error
-                     * entrara la vista de error 404
-                     */
-                     
-                      if ($_GET['page']===null) {
-                           
        		             include("modules/homepage/homepage.php");
        		        
-                      }else{
-                       
-                       include("Views/inc/404.php");
-                       
-                      }
                 break;
 		    
 	}	

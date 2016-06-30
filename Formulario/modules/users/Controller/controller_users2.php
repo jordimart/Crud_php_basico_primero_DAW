@@ -19,7 +19,6 @@ if ($_GET['page'] === "controller_users2.php") {
 
                 if (!$error) {
 
-                 
                     try {
 
                         $user = $_POST;
@@ -48,12 +47,7 @@ if ($_GET['page'] === "controller_users2.php") {
 
             if (isset($_POST['validar'])) {
                 
-                
-
                 $error=validate_all();
-                
-                //echo "Entro a validar   ".$error;
-                //exit ();
 
                 if (!$error) {
 
@@ -63,8 +57,7 @@ if ($_GET['page'] === "controller_users2.php") {
                         $resm = $daouser->modify_user($_POST['dni'], $_POST);
                         
                     } catch (Exception $e) {
-                echo "estoy en la 503 numero 1";
-                            exit();
+                
                      die('<script>window.location.href="index.php?page=503";</script>');
                     }
         
@@ -91,8 +84,7 @@ if ($_GET['page'] === "controller_users2.php") {
             }
             
                 if (!$res) {
-                    echo "estoy en la 503 numero 3";
-                            exit();
+                   
                     die('<script>window.location.href="index.php?page=503";</script>');
                 } 
             
@@ -103,23 +95,29 @@ if ($_GET['page'] === "controller_users2.php") {
 
         case 'delete':
 
-            try {
-                $daouser = new DAO_user();
-                $res = $daouser->delete_user($_GET['dni']);
+            if(isset($_POST['delete'])){
                 
-            } catch (Exception $e) {
-                
-                die('<script>window.location.href="index.php?page=503";</script>');
+                    try {
+                        $daouser = new DAO_user();
+                        $res = $daouser->delete_user($_GET['dni']);
+                        
+                    } catch (Exception $e) {
+                        
+                        die('<script>window.location.href="index.php?page=503";</script>');
+                    }
+        
+                    if (!$res) {
+        
+                        die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
+                    } else {
+        
+                        die('<script>window.location.href="index.php?page=503";</script>');
+                    }
+            
             }
-
-            if (!$res) {
-
-                die('<script>window.location.href="index.php?page=controller_users2.php&op=list";</script>');
-            } else {
-
-                die('<script>window.location.href="index.php?page=503";</script>');
-            }
-
+                 include("modules/users/views/delete_user_view.php");
+            
+            
             break;
 
         case 'show':
